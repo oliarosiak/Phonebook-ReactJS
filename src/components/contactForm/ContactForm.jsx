@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/operation';
-import { selectItems } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operation';
+import { selectItems } from 'redux/contacts/selectors';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 

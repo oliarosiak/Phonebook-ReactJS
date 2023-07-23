@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-//useDispatch,
-// import { useEffect } from 'react';
-// import { fetchContacts } from 'redux/operation';
-import { selectIsLoading, selectError } from 'redux/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { selectIsLoading, selectError } from 'redux/contacts/selectors';
+import { getCurrentUser } from 'redux/auth/authOperation';
+// import PrivateRoute from './PrivateRoute';
+// import PublicRoute from './PublicRoute';
 
 import {
   Container,
@@ -20,13 +21,13 @@ import LoginPage from 'pages/LoginPage';
 import Loader from './loader/Loader';
 
 const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
 
   return (
     <Container>
@@ -46,3 +47,31 @@ const App = () => {
 
 export default App;
 
+/**
+ * <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute redirectTo="/contacts" component={<LoginPage />} />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
+          />
+        </Route>
+      </Routes>
+ */

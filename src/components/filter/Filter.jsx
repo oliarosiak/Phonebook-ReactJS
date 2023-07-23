@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { filterValue } from 'redux/filterSlice';
+import { filterValue } from 'redux/contacts/filterSlice';
 
 import { RxPaperPlane } from 'react-icons/rx';
 import { FilterContainer, FilterLabel, FilterInput } from './Filter.styled';

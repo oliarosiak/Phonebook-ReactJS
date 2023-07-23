@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFilteredContacts } from 'redux/selectors';
-import { deleteContact } from 'redux/operation';
+import { selectFilteredContacts } from 'redux/contacts/selectors';
+import { deleteContact, fetchContacts } from 'redux/contacts/operation';
+import { useEffect } from 'react';
 
 import { ImPushpin, ImCross } from "react-icons/im";
 import { ListContainer, ListItem, ListBtn } from './ContactList.styled';
@@ -8,6 +9,10 @@ import { ListContainer, ListItem, ListBtn } from './ContactList.styled';
 const ContactList = () => {
   const dispatch = useDispatch();
   const filteredContacts = useSelector(selectFilteredContacts);
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const onDeleateButton = contact => dispatch(deleteContact(contact.id));
 

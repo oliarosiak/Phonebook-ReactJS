@@ -7,7 +7,9 @@ import ContactList from '../components/contactList/ContactList';
 const ContactsPage = () => {
   return (
     <>
+      <h1>Phonebook</h1>
       <ContactForm />
+      <h2>Contacts</h2>
       <Filter />
       <ContactList />
 
