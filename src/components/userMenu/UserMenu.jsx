@@ -7,8 +7,18 @@ const UserMenu = () => {
   const userName = useSelector(authSelectors.selectUserName);
 
   return (
-    <div>
-      <p>Hello, {userName}</p>
+    <div
+      style={{
+        display: 'flex',
+      }}
+    >
+      <p
+        style={{
+          marginRight: '16px',
+        }}
+      >
+        Hello, {userName}
+      </p>
       <button type="button" onClick={() => dispatch(logOut())}>
         Logout
       </button>

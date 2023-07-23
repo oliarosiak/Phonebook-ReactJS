@@ -24,12 +24,22 @@ const SharedLayout = () => {
 
   return (
     <div>
-      <header>
+      <header
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: '0 auto',
+        }}
+      >
         <Navigation />
         {isLogin ? <UserMenu /> : <AuthMenu />}
       </header>
 
-      <main>
+      <main
+        style={{
+          marginTop: '30px',
+        }}
+      >
         <Outlet />
       </main>
     </div>
