@@ -4,14 +4,17 @@ export const UserMenuContainer = styled.div`
   display: flex;
   align-items: baseline;
   color: var(--header-text-color);
+  padding: 0;
 `;
 
-export const UserMenuText = styled.p`
-  margin-right: 16px;
+export const UserMenuText = styled.span`
+  font-size: 16px;
+  font-weight: bold;
 `;
 
 export const UserMenuButton = styled.button`
   color: inherit;
+  margin-left: 16px;
   padding: 4px 12px;
   font-size: 16px;
   font-weight: bold;

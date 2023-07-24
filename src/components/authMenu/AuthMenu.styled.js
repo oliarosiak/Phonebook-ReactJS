@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 export const NavContainer = styled.nav`
   display: flex;
   align-items: baseline;
+  padding: 4px 0;
 `;
 
 export const StyledNavLink = styled(NavLink)`

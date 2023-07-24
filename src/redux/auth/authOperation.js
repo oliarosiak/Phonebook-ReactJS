@@ -24,6 +24,7 @@ export const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      alert('Something went wrong. Try again later!');
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -40,6 +41,7 @@ export const logIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      alert('Something went wrong. Try again later!');
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -50,6 +52,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     await axios.post('/users/logout');
     token.unset();
   } catch (error) {
+    alert('Something went wrong. Try again later!');
     return thunkAPI.rejectWithValue(error);
   }
 });

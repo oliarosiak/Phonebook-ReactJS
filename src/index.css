@@ -2,7 +2,7 @@
 
 :root {
   --text-color: #acd6de;
-  --header-text-color: #003f5c;  
+  --header-text-color: #003f5c;
   --border-color: #ded1b3;
   --bcg-color: #ebe6dc58;
   --header-bcg-color: #c1e7ffb5;
@@ -12,7 +12,7 @@
   --add-color: #f2c55e;
   --filter-color: #5886a5;
   --delete-color: #e08467;
-  --header-color:#477190;
+  --header-color: #477190;
 }
 
 body {

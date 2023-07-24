@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 
 import {
+  RegisterFormFormHeader,
   RegisterFormContainer,
   RegisterFormLabel,
   RegisterFormInput,
@@ -31,43 +32,41 @@ const RegisterForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={schema}
-      onSubmit={handleSubmit}
-    >
-      <RegisterFormContainer autoComplete="off">
-        <RegisterFormLabel htmlFor="name">
-          Name
-          <RegisterFormInput
-            type="text"
-            name="name"            
-            autoFocus
-            required
-          />
-        </RegisterFormLabel>
-        <RegisterFormLabel htmlFor="email">
-          Email
-          <RegisterFormInput
-            type="email"
-            name="email"
-            autoComplete="off"
-            required
-          />
-        </RegisterFormLabel>
-        <RegisterFormLabel htmlFor="password">
-          Password
-          <RegisterFormInput
-            type="password"
-            name="password"
-            autoComplete="off"
-            required
-          />
-        </RegisterFormLabel>
+    <>
+      <RegisterFormFormHeader>Create an account</RegisterFormFormHeader>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={schema}
+        onSubmit={handleSubmit}
+      >
+        <RegisterFormContainer autoComplete="off">
+          <RegisterFormLabel htmlFor="name">
+            Name
+            <RegisterFormInput type="text" name="name" autoFocus required />
+          </RegisterFormLabel>
+          <RegisterFormLabel htmlFor="email">
+            Email
+            <RegisterFormInput
+              type="email"
+              name="email"
+              autoComplete="off"
+              required
+            />
+          </RegisterFormLabel>
+          <RegisterFormLabel htmlFor="password">
+            Password
+            <RegisterFormInput
+              type="password"
+              name="password"
+              autoComplete="off"
+              required
+            />
+          </RegisterFormLabel>
 
-        <RegisterFormBtm type="submit">Sign Up</RegisterFormBtm>
-      </RegisterFormContainer>
-    </Formik>
+          <RegisterFormBtm type="submit">Sign Up</RegisterFormBtm>
+        </RegisterFormContainer>
+      </Formik>
+    </>
   );
 };
 

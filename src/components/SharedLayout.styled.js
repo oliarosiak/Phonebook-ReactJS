@@ -11,7 +11,7 @@ export const Header = styled.header`
   margin: 0 auto;
   padding: 12px;
   background-color: var(--header-bcg-color);
-  letter-spacing: 4px; 
+  letter-spacing: 4px;
   border: 2px solid var(--border-color);
 `;
 

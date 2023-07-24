@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 
 import {
+  LoginFormHeader,
   LoginFormContainer,
   LoginFormLabel,
   LoginFormInput,
@@ -29,7 +30,9 @@ const LoginForm = () => {
   };
 
   return (
-    <Formik
+    <>
+      <LoginFormHeader>Log in to your account</LoginFormHeader>
+      <Formik
       initialValues={initialValues}
       validationSchema={schema}
       onSubmit={handleSubmit}
@@ -47,6 +50,8 @@ const LoginForm = () => {
         <LoginFormBtm type="submit">Log In</LoginFormBtm>
       </LoginFormContainer>
     </Formik>
+    </>
+    
   );
 };
 
