@@ -6,6 +6,7 @@ import * as yup from 'yup';
 
 import { ImCheckmark2 } from 'react-icons/im';
 import {
+  FormHeader,
   FormContainer,
   FormLabel,
   FormInput,
@@ -56,27 +57,30 @@ const ContactForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={schema}
-      onSubmit={handleSubmit}
-    >
-      <FormContainer autoComplete="off">
-        <FormLabel htmlFor="name">
-          Name
-          <FormInput type="text" name="name" required />
-          <FormErrorMessage name="name" component="span" />
-        </FormLabel>
-        <FormLabel htmlFor="number">
-          Number
-          <FormInput type="tel" name="number" required />
-          <FormErrorMessage name="number" component="span" />
-        </FormLabel>
-        <FormBtm type="submit">
-          <ImCheckmark2 /> add contact
-        </FormBtm>
-      </FormContainer>
-    </Formik>
+    <>
+      <FormHeader>Phonebook</FormHeader>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={schema}
+        onSubmit={handleSubmit}
+      >
+        <FormContainer autoComplete="off">
+          <FormLabel htmlFor="name">
+            Name
+            <FormInput type="text" name="name" required />
+            <FormErrorMessage name="name" component="span" />
+          </FormLabel>
+          <FormLabel htmlFor="number">
+            Number
+            <FormInput type="tel" name="number" required />
+            <FormErrorMessage name="number" component="span" />
+          </FormLabel>
+          <FormBtm type="submit">
+            <ImCheckmark2 /> add contact
+          </FormBtm>
+        </FormContainer>
+      </Formik>
+    </>
   );
 };
 

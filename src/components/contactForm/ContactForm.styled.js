@@ -1,6 +1,12 @@
 import styled from '@emotion/styled';
 import { Form, Field, ErrorMessage } from 'formik';
 
+export const FormHeader = styled.h2`
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 8px;
+`;
+
 export const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;

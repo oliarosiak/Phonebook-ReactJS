@@ -7,13 +7,6 @@ import authSelectors from '../redux/auth/authSelectors';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
-import {
-  Container,
-  // MainHeader,
-  // SecondHeader,
-  // LoaderContainer,
-} from './App.styled';
-
 import SharedLayout from './SharedLayout';
 import HomePage from 'pages/HomePage';
 import RegisterPage from '../pages/RegisterPage';
@@ -33,34 +26,29 @@ const App = () => {
   return isLoading ? (
     <b>Refreshing user ... </b>
   ) : (
-    <Container>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage />} />
-          <Route
-            path="/register"
-            element={
-              <PublicRoute
-                redirectTo="/contacts"
-                component={<RegisterPage />}
-              />
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <PublicRoute redirectTo="/contacts" component={<LoginPage />} />
-            }
-          />
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
-            }
-          />
-        </Route>
-      </Routes>
-    </Container>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage />} />
+        <Route
+          path="/register"
+          element={
+            <PublicRoute redirectTo="/contacts" component={<RegisterPage />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <PublicRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
 

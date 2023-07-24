@@ -1,5 +1,11 @@
 import styled from '@emotion/styled';
 
+export const FilterHeader = styled.h3`
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 8px;
+`;
+
 export const FilterContainer = styled.div`
   padding: 12px;
   margin-bottom: 12px;

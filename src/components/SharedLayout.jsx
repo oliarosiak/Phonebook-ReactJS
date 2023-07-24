@@ -6,30 +6,22 @@ import Navigation from './navigation/Navigation';
 import AuthMenu from './authMenu/AuthMenu';
 import UserMenu from './userMenu/UserMenu';
 
+import { Container, Header, Main } from './SharedLayout.styled';
+
 const SharedLayout = () => {
   const isLogin = useSelector(authSelectors.selectIsLogin);
 
   return (
-    <div>
-      <header
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          margin: '0 auto',
-        }}
-      >
+    <Container>
+      <Header>
         <Navigation />
         {isLogin ? <UserMenu /> : <AuthMenu />}
-      </header>
+      </Header>
 
-      <main
-        style={{
-          marginTop: '30px',
-        }}
-      >
+      <Main>
         <Outlet />
-      </main>
-    </div>
+      </Main>
+    </Container>
   );
 };
 
