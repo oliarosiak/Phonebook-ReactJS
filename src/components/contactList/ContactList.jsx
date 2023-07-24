@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFilteredContacts } from 'redux/contacts/selectors';
-import { deleteContact, fetchContacts } from 'redux/contacts/operation';
+import { selectFilteredContacts } from 'redux/contacts/contactSelectors';
+import { deleteContact, fetchContacts } from 'redux/contacts/contactOperation';
 import { useEffect } from 'react';
 
 import { ImPushpin, ImCross } from "react-icons/im";

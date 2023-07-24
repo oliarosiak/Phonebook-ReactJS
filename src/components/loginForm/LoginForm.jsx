@@ -1,36 +1,52 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authOperation';
+import { Formik } from 'formik';
+import * as yup from 'yup';
+
+import {
+  LoginFormContainer,
+  LoginFormLabel,
+  LoginFormInput,
+  LoginFormBtm,
+} from './LoginForm.styled';
 
 const LoginForm = () => {
+  const schema = yup.object().shape({
+    email: yup.string(),
+    passwordr: yup.string().min(5).max(10),
+  });
+
   const dispatch = useDispatch();
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  const initialValues = {
+    email: '',
+    password: '',
+  };
 
-    const form = event.currentTarget;
-
-    const user = {
-      email: form.elements.email.value,
-      password: form.elements.password.value,
-    };
-
-    dispatch(logIn(user));
-    form.reset();
+  const handleSubmit = (values, { resetForm }) => {
+    dispatch(logIn(values));
+    resetForm();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" required />
-      </label>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={schema}
+      onSubmit={handleSubmit}
+    >
+      <LoginFormContainer>
+        <LoginFormLabel htmlFor="email">
+          Email
+          <LoginFormInput type="email" name="email" required />
+        </LoginFormLabel>
+        <LoginFormLabel htmlFor="password">
+          Password
+          <LoginFormInput type="password" name="password" required />
+        </LoginFormLabel>
 
-      <button type="submit">Log In</button>
-    </form>
+        <LoginFormBtm type="submit">Log In</LoginFormBtm>
+      </LoginFormContainer>
+    </Formik>
   );
 };
 
