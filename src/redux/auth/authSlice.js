@@ -5,7 +5,7 @@ const initialState = {
   user: { name: null, email: null },
   token: null,
   isLogin: false,
-  isGettingCurrentUser: false,
+  isCurrentUser: false,
 };
 
 const authSlice = createSlice({
@@ -30,15 +30,15 @@ const authSlice = createSlice({
       state.isLogin = false;
     },
     [getCurrentUser.pending](state, _) {
-      state.isGettingCurrentUser = true;
+      state.isCurrentUser = true;
     },
     [getCurrentUser.fulfilled](state, { payload }) {
       state.user = payload;
-      state.isLoggedIn = true;
-      state.isGettingCurrentUser = false;
+      state.isLogin = true;
+      state.isCurrentUser = false;
     },
     [getCurrentUser.rejected](state, _) {
-      state.isGettingCurrentUser = false;
+      state.isCurrentUser = false;
     },
   },
 });
