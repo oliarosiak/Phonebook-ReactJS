@@ -1,12 +1,9 @@
+import { HeaderContainer, MainHeader } from './Home.styled';
+
 const Home = () => (
-  <div>
-    <h1>
-      Happy to see you{' '}
-      <span role="img" aria-label="Hello icon">
-        🙌🏻
-      </span>
-    </h1>
-  </div>
+  <HeaderContainer>
+    <MainHeader>Welcome to Phonebook!</MainHeader>
+  </HeaderContainer>
 );
 
 export default Home;

@@ -37,7 +37,7 @@ const LoginForm = () => {
       <LoginFormContainer>
         <LoginFormLabel htmlFor="email">
           Email
-          <LoginFormInput type="email" name="email" required />
+          <LoginFormInput type="email" name="email" autoFocus required />
         </LoginFormLabel>
         <LoginFormLabel htmlFor="password">
           Password

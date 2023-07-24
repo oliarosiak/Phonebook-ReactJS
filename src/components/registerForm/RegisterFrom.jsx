@@ -36,13 +36,12 @@ const RegisterForm = () => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <RegisterFormContainer>
+      <RegisterFormContainer autoComplete="off">
         <RegisterFormLabel htmlFor="name">
           Name
           <RegisterFormInput
             type="text"
-            name="name"
-            autoComplete="off"
+            name="name"            
             autoFocus
             required
           />
