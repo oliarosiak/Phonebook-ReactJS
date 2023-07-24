@@ -5,6 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
+  min-height: 35px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;

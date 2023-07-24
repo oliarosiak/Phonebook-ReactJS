@@ -31,27 +31,26 @@ const LoginForm = () => {
 
   return (
     <>
-      <LoginFormHeader>Log in to your account</LoginFormHeader>
+      <LoginFormHeader>Login to your account</LoginFormHeader>
       <Formik
-      initialValues={initialValues}
-      validationSchema={schema}
-      onSubmit={handleSubmit}
-    >
-      <LoginFormContainer>
-        <LoginFormLabel htmlFor="email">
-          Email
-          <LoginFormInput type="email" name="email" autoFocus required />
-        </LoginFormLabel>
-        <LoginFormLabel htmlFor="password">
-          Password
-          <LoginFormInput type="password" name="password" required />
-        </LoginFormLabel>
+        initialValues={initialValues}
+        validationSchema={schema}
+        onSubmit={handleSubmit}
+      >
+        <LoginFormContainer autoComplete="off">
+          <LoginFormLabel htmlFor="email">
+            Email
+            <LoginFormInput type="email" name="email" autoFocus required />
+          </LoginFormLabel>
+          <LoginFormLabel htmlFor="password">
+            Password
+            <LoginFormInput type="password" name="password" required />
+          </LoginFormLabel>
 
-        <LoginFormBtm type="submit">Log In</LoginFormBtm>
-      </LoginFormContainer>
-    </Formik>
+          <LoginFormBtm type="submit">Log In</LoginFormBtm>
+        </LoginFormContainer>
+      </Formik>
     </>
-    
   );
 };
 

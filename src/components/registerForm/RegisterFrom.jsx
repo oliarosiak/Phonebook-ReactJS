@@ -46,21 +46,11 @@ const RegisterForm = () => {
           </RegisterFormLabel>
           <RegisterFormLabel htmlFor="email">
             Email
-            <RegisterFormInput
-              type="email"
-              name="email"
-              autoComplete="off"
-              required
-            />
+            <RegisterFormInput type="email" name="email" required />
           </RegisterFormLabel>
           <RegisterFormLabel htmlFor="password">
             Password
-            <RegisterFormInput
-              type="password"
-              name="password"
-              autoComplete="off"
-              required
-            />
+            <RegisterFormInput type="password" name="password" required />
           </RegisterFormLabel>
 
           <RegisterFormBtm type="submit">Sign Up</RegisterFormBtm>
